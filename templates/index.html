@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>ML API</title>
+</head>
+<body>
+   
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    House Price Prediction
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('predict')}}" method="POST">
+                <div class="input">
+                    <label  class="input-label">area</label>
+                    <input name="area" type="number" step="any" min="0" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label  class="input-label">No. of bedrooms</label>
+                    <input name="bedrooms" type="number" step="any" min="0" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label  class="input-label">No. of bathrooms</label>
+                    <input name="bathrooms" type="number" step="any" min="0" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label  class="input-label">No. of stories</label>
+                    <input name="stories" type="number" step="any" min="0" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label  class="input-label">parking</label>
+                    <input name="parking" type="number" step="any" min="0" class="input-field" required/>
+                </div>
+
+                <div class="input">
+                    <br>
+                    <label for="mainroad">mainroad</label>
+                    <select id="mainroad" name="mainroad">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="input">
+                    <br>
+                    <label for="guestroom">guestroom</label>
+                    <select id="guestroom" name="guestroom">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="input">
+                    <br>
+                    <label for="basement">basement</label>
+                    <select id="basement" name="basement">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="input">
+                    <br>
+                    <label for="airconditioning">air conditioning</label>
+                    <select id="airconditioning" name="airconditioning">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="input">
+                    <br>
+                    <label for="hotwaterheating">hot water heating</label>
+                    <select id="hotwaterheating" name="hotwaterheating">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="input">
+                    <br>
+                    <label for="prefarea">prefarea</label>
+                    <select id="prefarea" name="prefarea">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    </select>
+                    <br>
+                </div>
+                
+
+                <div class="input">
+                    <br>
+                    <label for="furnishingstatus">furnishing status</label>
+                    <select id="furnishingstatus" name="furnishingstatus">
+                    <option value="0">furnished</option>
+                    <option value="1">semi-furnished</option>
+                    <option value="2">unfurnished</option>
+                    </select>
+                    <br>
+                </div>
+                
+                <div class="action">
+                    <br>
+                    <button type="submit" class="action-button">Predict</button>
+                    <br>
+                </div>
+            </form>
+            <br>
+
+            <p style="color: darkred; font-weight: bold;">{{ prediction_text }}</p>
+
+            <br>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
